@@ -1,0 +1,7 @@
+spring:
+    application:
+        name: user-management-service
+
+    cloud:
+        config:
+            enabled: false

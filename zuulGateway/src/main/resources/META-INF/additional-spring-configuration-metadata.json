@@ -1,0 +1,24 @@
+{
+    "properties": [
+        {
+            "name": "spring.cloud.config.server.git.uri",
+            "type": "java.lang.String",
+            "description": "Uri of the Spring Cloud Config Server."
+        },
+        {
+            "name": "hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds",
+            "type": "java.lang.String",
+            "description": "Defines the hystrix timeout."
+        },
+        {
+            "name": "ribbon.ConnectTimeout",
+            "type": "java.lang.String",
+            "description": "Defines the ribbon-ConnectTimeout."
+        },
+        {
+            "name": "ribbon.ReadTimeout",
+            "type": "java.lang.String",
+            "description": "Defines the ribbon-ReadTimeout."
+        }
+    ]
+}

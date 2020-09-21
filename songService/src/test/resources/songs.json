@@ -1,0 +1,72 @@
+[
+    {
+        "id": 10,
+        "title": "7 Years",
+        "artist": "Lukas Graham",
+        "album": "Lukas Graham (Blue Album)",
+        "released": 2015
+    },
+    {
+        "id": 9,
+        "title": "Private Show",
+        "artist": "Britney Spears",
+        "album": "Glory",
+        "released": 2016
+    },
+    {
+        "id": 8,
+        "title": "No",
+        "artist": "Meghan Trainor",
+        "album": "Thank You",
+        "released": 2016
+    },
+    {
+        "id": 7,
+        "title": "i hate u, i love u",
+        "artist": "Gnash",
+        "album": "Top Hits 2017",
+        "released": 2017
+    },
+    {
+        "id": 6,
+        "title": "I Took a Pill in Ibiza",
+        "artist": "Mike Posner",
+        "album": "At Night, Alone.",
+        "released": 2016
+    },
+    {
+        "id": 5,
+        "title": "Bad Things",
+        "artist": "Camila Cabello, Machine Gun Kelly",
+        "album": "Bloom",
+        "released": 2017
+    },
+    {
+        "id": 4,
+        "title": "Ghostbusters (I'm not a fraid)",
+        "artist": "Fall Out Boy, Missy Elliott",
+        "album": "Ghostbusters",
+        "released": 2016
+    },
+    {
+        "id": 3,
+        "title": "Team",
+        "artist": "Iggy Azalea",
+        "album": null,
+        "released": 2016
+    },
+    {
+        "id": 2,
+        "title": "Mom",
+        "artist": "Meghan Trainor, Kelli Trainor",
+        "album": "Thank You",
+        "released": 2016
+    },
+    {
+        "id": 1,
+        "title": "Can’t Stop the Feeling",
+        "artist": "Justin Timberlake",
+        "album": "Trolls",
+        "released": 2016
+    }
+]

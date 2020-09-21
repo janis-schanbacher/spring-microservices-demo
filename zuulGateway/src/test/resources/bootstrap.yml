@@ -1,0 +1,8 @@
+spring:
+    application:
+        name: zuul-gateway
+
+# Use local config instead of fetching config from config server
+#    cloud:
+#        config:
+#            enabled: false

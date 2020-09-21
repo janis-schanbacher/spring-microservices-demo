@@ -1,0 +1,8 @@
+spring:
+    application:
+        name: auth-service
+    cloud:
+        config:
+            server:
+                git:
+                    uri: http://localhost:8888

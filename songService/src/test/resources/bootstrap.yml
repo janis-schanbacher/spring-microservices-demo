@@ -1,0 +1,7 @@
+spring:
+    application:
+        name: song-service
+
+    cloud:
+        config:
+            enabled: false

@@ -1,0 +1,75 @@
+#server:
+#    port: 8762
+#
+#eureka:
+#    client:
+#        service-url:
+#            default-zone: http://localhost:8761
+#        fetch-registry: true
+#
+#ribbon:
+#    eager-load:
+#        # Eager load the child ribbon related application contexts at application startup time
+#        enabled: true
+#    ReadTimeout: 40000
+#    ConnectTimeout: 10000
+#    eureka:
+#        enabled: true
+#
+## Increase the Hystrix timeout to 60s (globally)
+#hystrix:
+#    command:
+#        default:
+#            execution:
+#                isolation:
+#                    thread:
+#                        timeoutInMilliseconds: 60000
+#
+#zuul:
+#    prefix: /api
+#    strip-prefix: true
+#
+#    # Disable accessing services using service name (i.e. gallery-service). Only allow access to the routes that are
+#    # explicitly specified below.
+#    # Link: https://stackoverflow.com/questions/46317388/zuul-service-name-exposed-instead-of-route-path-only
+#    ignored-services: '*'
+#
+#    # Map paths to services
+#    routes:
+#        auth-service:
+#            path: /auth/**
+#            service-id: auth-service
+#            # Avoid stripping the prefix "/auth" from the url, that will be passed to auth-service.
+#            # (Only strip zuul.prefix)
+#            strip-prefix: false
+#            # Exclude authorization from sensitive headers
+#            sensitive-headers: Cookie,Set-Cookie
+#
+#        user-management-service:
+#            path: /users/**
+#            service-id: user-management-service
+#            strip-prefix: false
+#
+#        song-controller:
+#            path: /songs/**
+#            service-id: song-service
+#            strip-prefix: false
+#
+#        playlist-controller:
+#            path: /songlists/**
+#            service-id: song-service
+#            strip-prefix: false
+#
+#        version:
+#            path: /version/**
+#            service-id: song-service
+#            servicePath: /songs/version
+#            strip-prefix: false
+#
+#        config-server-version:
+#            path: /config/version/**
+#            url: http://localhost:8888/config/version
+#
+#        discovery-server-version:
+#            path: /discovery/version/**
+#            url: http://localhost:8761/discovery/version
