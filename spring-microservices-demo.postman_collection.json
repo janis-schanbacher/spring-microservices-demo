@@ -1,0 +1,813 @@
+{
+	"info": {
+		"_postman_id": "a8bff90a-5f62-4be2-a677-51c7dbacce6f",
+		"name": "spring-microservices-demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/version",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8762/api/version",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"version"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/auth - testUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"testUser\",\n    \"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8762/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/auth - admin",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"admin\",\n    \"password\": \"pass1234\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8762/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/auth - mmuster",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": \"mmuster\",\n    \"password\": \"pass1234\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8762/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users - testUser",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"testUser\",\n    \"firstName\": \"firstName\",\n    \"lastName\": \"lastName\",\n    \"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8762/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users - as Admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNjAwODU0MjM3LCJleHAiOjE2MDA5NDA2Mzd9.mXVELCoXctWtqIYUGHeKSliGaTc4TWfGwmc3TMu15SAk35QoBgWOFuazdQJ0dQ2Lvy2hm8H3SFuwuKd_jHqPCw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8762/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/testUser - as testUser",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNjAwODU0MjM3LCJleHAiOjE2MDA5NDA2Mzd9.mXVELCoXctWtqIYUGHeKSliGaTc4TWfGwmc3TMu15SAk35QoBgWOFuazdQJ0dQ2Lvy2hm8H3SFuwuKd_jHqPCw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8762/api/users/testUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"users",
+						"testUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/testUser - as admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNjAwODU0MjM3LCJleHAiOjE2MDA5NDA2Mzd9.mXVELCoXctWtqIYUGHeKSliGaTc4TWfGwmc3TMu15SAk35QoBgWOFuazdQJ0dQ2Lvy2hm8H3SFuwuKd_jHqPCw"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8762/api/users/testUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"users",
+						"testUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/testUser - as testUser",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlciIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MDA4NTUyMTgsImV4cCI6MTYwMDk0MTYxOH0.AuMenVvtnjUD1umn1HGnBUjkg7Ytp03_ctCtdi6uXrME0TH9a1vtd04fHkWtFv72rdXqu3HIu3oIIUfjIQ61UQ",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"testUser\",\n    \"firstName\": \"firstNameNew\",\n    \"lastName\": \"lastNameNew\",\n    \"password\": \"passwordNew\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8762/api/users/testUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"users",
+						"testUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/testUser - as admin",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNjAwODU1NDcyLCJleHAiOjE2MDA5NDE4NzJ9.U5c4F79Uj3OBbE1H7iz9mnKn4QCnBqmITbJgJ8XgeVbgROzwAfXJCCauIto-qAamp_r4HfUuAgqNJfXdqwZcXA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"testUser\",\n    \"firstName\": \"firstNameNew\",\n    \"lastName\": \"lastNameNew\",\n    \"password\": \"passwordNew\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8762/api/users/testUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"users",
+						"testUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/testUser - make admin - as admin",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNjAwODU1NDcyLCJleHAiOjE2MDA5NDE4NzJ9.U5c4F79Uj3OBbE1H7iz9mnKn4QCnBqmITbJgJ8XgeVbgROzwAfXJCCauIto-qAamp_r4HfUuAgqNJfXdqwZcXA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"testUser\",\n    \"firstName\": \"firstNameNew\",\n    \"lastName\": \"lastNameNew\",\n    \"password\": \"passwordNew\",\n    \"role\": \"ADMIN\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8762/api/users/testUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"users",
+						"testUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/testUser - as testUser",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNjAwODU0MjM3LCJleHAiOjE2MDA5NDA2Mzd9.mXVELCoXctWtqIYUGHeKSliGaTc4TWfGwmc3TMu15SAk35QoBgWOFuazdQJ0dQ2Lvy2hm8H3SFuwuKd_jHqPCw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8762/api/users/testUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"users",
+						"testUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/users/testUser - as admin",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNjAwODU0MjM3LCJleHAiOjE2MDA5NDA2Mzd9.mXVELCoXctWtqIYUGHeKSliGaTc4TWfGwmc3TMu15SAk35QoBgWOFuazdQJ0dQ2Lvy2hm8H3SFuwuKd_jHqPCw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8762/api/users/testUser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"users",
+						"testUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlciIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MDA4NTU2MDEsImV4cCI6MTYwMDk0MjAwMX0.3cpWWF4W8mCkQrH5OjtKHsFoyRFFZKXi-XABtR07cCWqmq0n_ms0mfmq0bVb7PA-fqf9R_Yptm25tp0od3tkOw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8762/api/songs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"songs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songs",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlciIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MDA4NTU2MDEsImV4cCI6MTYwMDk0MjAwMX0.3cpWWF4W8mCkQrH5OjtKHsFoyRFFZKXi-XABtR07cCWqmq0n_ms0mfmq0bVb7PA-fqf9R_Yptm25tp0od3tkOw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"title\",\n    \"artist\": \"artist\",\n    \"label\": \"label\",\n    \"released\": 2020\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8762/api/songs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"songs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songs/5",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlciIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MDA4NTU2MDEsImV4cCI6MTYwMDk0MjAwMX0.3cpWWF4W8mCkQrH5OjtKHsFoyRFFZKXi-XABtR07cCWqmq0n_ms0mfmq0bVb7PA-fqf9R_Yptm25tp0od3tkOw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8762/api/songs/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"songs",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songs/78",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlciIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MDA4NTU2MDEsImV4cCI6MTYwMDk0MjAwMX0.3cpWWF4W8mCkQrH5OjtKHsFoyRFFZKXi-XABtR07cCWqmq0n_ms0mfmq0bVb7PA-fqf9R_Yptm25tp0od3tkOw",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 78,\n    \"title\": \"titleNew\",\n    \"artist\": \"artistNew\",\n    \"label\": \"labelnew\",\n    \"released\": 2000\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8762/api/songs/78",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"songs",
+						"78"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songs/78",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlciIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MDA4NTU2MDEsImV4cCI6MTYwMDk0MjAwMX0.3cpWWF4W8mCkQrH5OjtKHsFoyRFFZKXi-XABtR07cCWqmq0n_ms0mfmq0bVb7PA-fqf9R_Yptm25tp0od3tkOw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8762/api/songs/78",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"songs",
+						"78"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songlists - mmuster - as testUser",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlciIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MDA4NTU2MDEsImV4cCI6MTYwMDk0MjAwMX0.3cpWWF4W8mCkQrH5OjtKHsFoyRFFZKXi-XABtR07cCWqmq0n_ms0mfmq0bVb7PA-fqf9R_Yptm25tp0od3tkOw"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8762/api/songlists?userId=mmuster",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"songlists"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "mmuster"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songlists - mmuster - as mmuster",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtbXVzdGVyIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTYwMDg1NDYzMywiZXhwIjoxNjAwOTQxMDMzfQ.xV0KgBSOLVEIvRRcs5ZT9-1ihvlZux9XZ_oPF9Fj0F4lZvWHMiSkOY7kHJMtMgOr1j9rZRMdJ0E5nACUH3QvDg"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8762/api/songlists?userId=mmuster",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"songlists"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "mmuster"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songlists - public",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlciIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MDA4NTU2MDEsImV4cCI6MTYwMDk0MjAwMX0.3cpWWF4W8mCkQrH5OjtKHsFoyRFFZKXi-XABtR07cCWqmq0n_ms0mfmq0bVb7PA-fqf9R_Yptm25tp0od3tkOw"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"testUsers public\",\n    \"isPrivate\": false,\n    \"songList\": [\n        {\n            \"id\": 4,\n            \"title\": \"Sussudio\",\n            \"artist\": \"Phil Collins\",\n            \"label\": \"Virgin\",\n            \"released\": 1985\n        },\n        {\n            \"id\": 5,\n            \"title\": \"We Built This City\",\n            \"artist\": \"Starship\",\n            \"label\": \"Grunt/RCA\",\n            \"released\": 1985\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8762/api/songlists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"songlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songlists - private",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlciIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MDA4NTU2MDEsImV4cCI6MTYwMDk0MjAwMX0.3cpWWF4W8mCkQrH5OjtKHsFoyRFFZKXi-XABtR07cCWqmq0n_ms0mfmq0bVb7PA-fqf9R_Yptm25tp0od3tkOw"
+					},
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"testUsers public\",\n    \"isPrivate\": true,\n    \"songList\": [\n        {\n            \"id\": 4,\n            \"title\": \"Sussudio\",\n            \"artist\": \"Phil Collins\",\n            \"label\": \"Virgin\",\n            \"released\": 1985\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8762/api/songlists",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"songlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songlists/36 - public - not owner",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlciIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MDA4NTU2MDEsImV4cCI6MTYwMDk0MjAwMX0.3cpWWF4W8mCkQrH5OjtKHsFoyRFFZKXi-XABtR07cCWqmq0n_ms0mfmq0bVb7PA-fqf9R_Yptm25tp0od3tkOw"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"testUsers public\",\n    \"isPrivate\": false,\n    \"songList\": [\n        {\n            \"id\": 4,\n            \"title\": \"Sussudio\",\n            \"artist\": \"Phil Collins\",\n            \"label\": \"Virgin\",\n            \"released\": 1985\n        },\n        {\n            \"id\": 5,\n            \"title\": \"We Built This City\",\n            \"artist\": \"Starship\",\n            \"label\": \"Grunt/RCA\",\n            \"released\": 1985\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8762/api/songlists/36",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"songlists",
+						"36"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songlists/38 - private - owner",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtbXVzdGVyIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTYwMDg1NDYzMywiZXhwIjoxNjAwOTQxMDMzfQ.xV0KgBSOLVEIvRRcs5ZT9-1ihvlZux9XZ_oPF9Fj0F4lZvWHMiSkOY7kHJMtMgOr1j9rZRMdJ0E5nACUH3QvDg"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8762/api/songlists/38",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"songlists",
+						"38"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songlists/157 - owner",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlciIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MDA4NTU2MDEsImV4cCI6MTYwMDk0MjAwMX0.3cpWWF4W8mCkQrH5OjtKHsFoyRFFZKXi-XABtR07cCWqmq0n_ms0mfmq0bVb7PA-fqf9R_Yptm25tp0od3tkOw"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 157,\n    \"name\": \"testUsers public updated\",\n    \"isPrivate\": true,\n    \"songList\": [\n        {\n            \"id\": 4,\n            \"title\": \"Sussudio\",\n            \"artist\": \"Phil Collins\",\n            \"label\": \"Virgin\",\n            \"released\": 1985\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8762/api/songlists/157",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"songlists",
+						"157"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/songlists/158 - owner",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0VXNlciIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2MDA4NTU2MDEsImV4cCI6MTYwMDk0MjAwMX0.3cpWWF4W8mCkQrH5OjtKHsFoyRFFZKXi-XABtR07cCWqmq0n_ms0mfmq0bVb7PA-fqf9R_Yptm25tp0od3tkOw"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8762/api/songlists/158",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8762",
+					"path": [
+						"api",
+						"songlists",
+						"158"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

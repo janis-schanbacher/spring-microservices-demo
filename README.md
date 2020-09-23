@@ -50,9 +50,9 @@ The web application consists of the following [Spring Boot](https://spring.io/pr
     make mongo-db-up
     ```
     - Shutdown
-    ```sh
-    make mongo-db-down
-    ```
+        ```sh
+        make mongo-db-down
+        ```
 
 ### Run the application
 - Start the config server
@@ -145,10 +145,9 @@ The web application consists of the following [Spring Boot](https://spring.io/pr
 - Get playlists of a user (public playlists, or all if requesting the current users playlists)
     ```sh
     curl --location --request GET 'http://localhost:8762/api/songlists?userId=username' \
-    --header 'Authorization: <Replace with Bearer token>' \
-    --header 'Content-Type: application/json'
+    --header 'Authorization: <Replace with Bearer token>'
     ```
-
+- More examples see: [spring-microservices-demo.postman_collection.json](https://github.com/janis-schanbacher/spring-microservices-demo/blob/master/spring-microservices-demo.postman_collection.json)
 ### Available Routes
 All routes are accessible through the following base URL:
 [http://localhost:8762/api/](http://localhost:8762/api/)
@@ -161,4 +160,4 @@ All routes are accessible through the following base URL:
 - GET, PUT, DELETE /songs/{id}
 - GET, POST /songlists
 - GET, PUT, DELETE /songlists/{id}
-- GET /version, /config/version, /discovery/version, /gateway/version, /auth/version, /users/version, /songs/version
+- GET /version, /config/version, /discovery/version, /gateway/version, /auth/version, /users/version, /songs/versionz
