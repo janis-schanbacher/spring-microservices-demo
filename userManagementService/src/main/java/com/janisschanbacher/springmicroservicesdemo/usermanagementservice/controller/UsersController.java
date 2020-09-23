@@ -38,8 +38,17 @@ public class UsersController {
      * or an empty body and status 404 if no user with the specified username is found.
      */
     @GetMapping(value = "/{username}")
-    public ResponseEntity<User> getUser(@PathVariable("username") String username) {
+    public ResponseEntity<User> getUser(
+        @PathVariable("username") String username,
+        @RequestHeader(value = "isAdmin", defaultValue = "false") String isAdmin
+    ) {
         Optional<User> user = userRepository.findByUsername(username);
+        if (user.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        if (user.get().getRole().equals("ADMIN") && !Boolean.parseBoolean(isAdmin)) {
+            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+        }
         return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
